@@ -1,12 +1,67 @@
 .section{
     margin: 50px;
-    width: 50%;
+    width: 70%;
 }
 
-#result{
-    display: flex;
+
+#addToDo{
+    position: relative;
+    width: 150px;
+    height: auto;
+    /* padding: 10px; */
+    margin-left: 50px;
 }
+
+#filter{
+    position: relative;
+    width: auto;
+    height: 50px;
+    /* padding: 5px; */
+    margin-left: 200px;
+}
+.formvalidation{
+    border: 2px solid red;
+}
+
+
 
 #toDoContainer{
     display: inline;
+}
+
+/* #filter{
+    width: 30px;
+    height: auto;
+
+} */
+
+#text{
+    
+    position: relative;
+    padding: 10px;
+    margin: 10px;
+    border-bottom: 5px solid black;
+    list-style: none;
+    width: 50%;
+    padding-left: 5%;
+    padding-bottom: 10px;
+
+}
+#check{
+    position: relative;
+    top: -40px;
+    display:inline;
+}
+
+#delete{
+    display: flex;
+  color: red;
+  border-color: red;
+    float: right;
+    cursor: pointer;
+    position: relative;
+}
+#result{
+    width: 70%;
+    display:block;
 }
