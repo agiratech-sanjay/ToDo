@@ -31,14 +31,23 @@
                 <button type="button" class="btn btn-primary" id="addToDo"> ADD TO-DO</button>
               </div>
               <div class="col-2">
-                <br>
-                <select class="form-select" aria-label="Default select example" id="filter">
-                    <!-- <option selected>FILTER</option> -->
-                    <option value="1" id="all" name="select">ALL</option>
-                    <option value="2" id="active" name="select">ACTIVE</option>
-                    <option value="3" id="completed" name="select">COMPLETED</option>
-                  </select>
+                <ul>
+                    <li class="order"><i class="fa-solid fa-filter"></i>ALL</li>
+                    <li class="order"><i class="fa-solid fa-filter"></i>ACTIVE</li>
+                    <li class="order"><i class="fa-solid fa-filter"></i>COMPLETED</li>
+
+                </ul>
               </div>
+              <!-- <div class="col-6">
+                <br>
+                <button type="button" class="btn btn-outline-warning" id="all"><i class="fa-solid fa-filter"></i>ALL</button> 
+            
+           
+                <button type="button" class="btn btn-outline-success" id="active"><i class="fa-solid fa-filter"></i>ACTIVE</button> 
+            
+            
+                <button type="button" class="btn btn-outline-info" id="complete"><i class="fa-solid fa-filter"></i>COMPLETE</button> 
+            </div> -->
               <!-- <div class="col-2">
                 <br>
                 <button type="button" class="btn btn-outline-danger" id="del"><i class="fa-solid fa-trash"></i>Delete</button>                
@@ -52,7 +61,7 @@
         TO-DO LISTS
     </h4>
     <ul id="toDoContainer"> 
-    
+    <br>
     </ul>
 
 

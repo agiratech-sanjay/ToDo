@@ -1,15 +1,16 @@
 .section{
     margin: 50px;
-    width: 70%;
+    width: 100%;
 }
 
 
 #addToDo{
     position: relative;
-    width: 150px;
     height: auto;
-    /* padding: 10px; */
-    margin-left: 50px;
+    font-size: 0.7rem;
+    padding: 10px;
+    
+   
 }
 
 #filter{
@@ -27,41 +28,92 @@
 
 #toDoContainer{
     display: inline;
+    /* position: relative;
+    left: 50px; */
+
 }
 
-/* #filter{
-    width: 30px;
-    height: auto;
 
-} */
+#check{
+    position: relative;
+    /* top: -40px; */
+    display:inline;
+}
+#leeet{
+    list-style-type: none;
+}
 
-#text{
+#check{
+    position: relative;
+    top: 12px;
+}
+
+#deleteall{
     
     position: relative;
     padding: 10px;
     margin: 10px;
-    border-bottom: 5px solid black;
-    list-style: none;
-    width: 50%;
-    padding-left: 5%;
-    padding-bottom: 10px;
-
+    
+    padding-left: 10%;
+    padding-bottom: 5px;  
+    
 }
-#check{
+
+#date{
+    display: block;
+    /* border: 3px solid blue; */
+    margin-bottom: 5px;
+    width: 200px;
     position: relative;
-    top: -40px;
-    display:inline;
+    top: 10px;
+    padding-left: 30px;
+    border-top: 5px solid black;
+    width: 50%;
+
+
 }
 
-#delete{
+
+
+
+
+.delete{
     display: flex;
   color: red;
   border-color: red;
     float: right;
     cursor: pointer;
     position: relative;
+    bottom: 50px;
 }
+
+
 #result{
     width: 70%;
     display:block;
 }
+
+.order{
+    text-decoration: none;
+    list-style: none;
+}
+
+
+/* #all{
+    position: relative;
+    height: auto;
+     right: 100px;
+}
+
+#active{
+    position: relative;
+    height: auto;
+   right:70px;
+   
+}
+
+#complete{
+    position: relative;
+    height: auto;
+    right:50px;
+} */
