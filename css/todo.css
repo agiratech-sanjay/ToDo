@@ -39,8 +39,10 @@
     /* top: -40px; */
     display:inline;
 }
+
 #leeet{
     list-style-type: none;
+    right: 20px;
 }
 
 #check{
@@ -48,7 +50,7 @@
     top: 12px;
 }
 
-#deleteall{
+/* #deleteall{
     
     position: relative;
     padding: 10px;
@@ -57,7 +59,7 @@
     padding-left: 10%;
     padding-bottom: 5px;  
     
-}
+} */
 
 #date{
     display: block;
@@ -93,11 +95,40 @@
     display:block;
 }
 
-.order{
-    text-decoration: none;
+li{
     list-style: none;
+    
+}
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    position: relative;
+    right: 10px;
+    top: 50px;
 }
 
+.icon1{
+    display: none;
+}
+.block{
+    display:none ;
+}
+.working {
+    display: block;
+    position: absolute;
+    margin-top: 20px;
+    background-color: rgb(204, 202, 202);
+    /* padding: 6px; */
+    border-radius: 10px;
+    /* right: 1px; */
+}
+
+
+
+/* 
+.helloworld{
+    display: none;
+} */
 
 /* #all{
     position: relative;

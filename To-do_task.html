@@ -30,14 +30,15 @@
                 <br>
                 <button type="button" class="btn btn-primary" id="addToDo"> ADD TO-DO</button>
               </div>
-              <div class="col-2">
-                <ul>
-                    <li class="order"><i class="fa-solid fa-filter"></i>ALL</li>
-                    <li class="order"><i class="fa-solid fa-filter"></i>ACTIVE</li>
-                    <li class="order"><i class="fa-solid fa-filter"></i>COMPLETED</li>
-
-                </ul>
-              </div>
+              <div class="col-4">
+              
+                <p onclick="show()" id="icon"> <i class="fa-solid fa-filter"></i>ALL</p>
+                <ul id="listcss" class="icon1">
+                <li id="all" onclick="all1()"> <i class="fa-solid fa-filter"></i> ALL</li>
+                <li id="active" onclick="active1()"> <i class="fa-solid fa-filter"></i> ACTIVE</li>
+                <li id="complete" onclick="complete1()"> <i class="fa-solid fa-filter"></i>          COMPLETE</li>
+            </ul>
+                </div>
               <!-- <div class="col-6">
                 <br>
                 <button type="button" class="btn btn-outline-warning" id="all"><i class="fa-solid fa-filter"></i>ALL</button> 
