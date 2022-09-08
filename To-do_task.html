@@ -15,23 +15,27 @@
    
 </head>
 <body>
-<div class="container-lg responsive">
+<div class="container-lg responsive" id="bodyall">
     <div class="header pt-3 bg-success text-white text-center">
         <h1>SIMPLE TO-DO LIST</h1>
     </div>
+    
     <div class="section ">
         <div class="top text text-center text-black  " id="topcontent">
             <div class="row ">
-            <div class="col-4">
-                <label class="heoo" for="inputField">TO-DO-LIST</label>
-                <input type="text" class="form-control" id="inputField" placeholder="TO-DO*"> <br>
-              </div>
-              <div class="col-2">
-                <br>
-                <button type="button" class="btn btn-primary" id="addToDo"> ADD TO-DO</button>
-              </div>
-              <div class="col-4">
-              
+                <div class="col-4">
+                    <label class="heoo" for="inputField">TO-DO-LIST</label>
+                    <input type="text" class="form-control" id="inputField" placeholder="TO-DO*"> 
+                    <div class="input-group" id="searchbars">
+                        <input type="search" id="form1" class="form-control" placeholder="Search... " onmouseup="searchfun()"/>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <br>
+                    <button type="button" class="btn btn-primary" id="addToDo"> ADD TO-DO</button>
+                </div>
+                <div class="col-4" id="filterCard">
+                    
                 <p onclick="show()" id="icon"> <i class="fa-solid fa-filter"></i>ALL</p>
                 <ul id="listcss" class="icon1">
                 <li id="all" onclick="all1()"> <i class="fa-solid fa-filter"></i> ALL</li>
@@ -57,22 +61,15 @@
         </div>
     </div>
  </div>
+
 <div class="container shadow p-3 mb-5 bg-body rounded" id="result">
     <h4>
         TO-DO LISTS
     </h4>
     <ul id="toDoContainer"> 
     <br>
-    </ul>
-
-
-    
+    </ul>  
 </div>
-
-
-
-
-
 
 
 

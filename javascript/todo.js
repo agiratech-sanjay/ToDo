@@ -2,6 +2,9 @@ let addToDoButton = document.getElementById('addToDo');
 let toDoContainer = document.getElementById('toDoContainer');
 let input = document.getElementById('inputField');
 let filter = document.getElementById('filter');
+let filterall = document.getElementById("filterall");
+let filteractive = document.getElementById("filteractive");
+let filtercomplete = document.getElementById("filtercomplete")
  
 
 
@@ -108,23 +111,41 @@ function complete1(){
 
 var check = document.getElementById("all");
 check.addEventListener("click",()=>{
-    let filter = arr.filter((i)=>i.checkbox.checked === false || i.checkbox.checked === true);
-    console.log(filter);
+    // let filter = arr.filter((i)=>i.checkbox.checked === false || i.checkbox.checked === true);
+    // console.log(filter);
+    // for (let i = 0; i <= arr.length; i++) {
+    //     toDoContainer.innerHTML = filter[i].name + filter[i].checkbox + filter[i].date + filter[i].delete
+    //     }
     
+   
 
 }
 )
+
 
 let cheeck = document.getElementById("active");
 cheeck.addEventListener("click",()=>{
     let filter = arr.filter((i)=>i.checkbox.checked === false);
     console.log(filter);
+    for (let i = 0; i < arr.length; i++) {
+        toDoContainer.innerHTML = filter[i].name + filter[i].checkbox + filter[i].date + filter[i].delete;
+        }
+    // toDoContainer.innerHTML= filter[0].name;
+
 }
 )
+
 
 let che = document.getElementById("complete");
 che.addEventListener("click",()=>{
     let filter = arr.filter((i)=>i.checkbox.checked === true);
     console.log(filter);
-}
-)
+    for (let i = 0; i < arr.length; i++) {
+        toDoContainer.innerHTML = filter[i].name + filter[i].checkbox + filter[i].date + filter[i].delete;
+        }
+    
+
+      }  // toDoContainer.innerHTML = filter.join();
+      )
+
+
