@@ -8,6 +8,9 @@ let filtercomplete = document.getElementById("filtercomplete")
  
 
 
+
+
+
 let arr = [];
 const months = ["1","2","3","4","5","6","7","8","9","10","11","12"];
 
@@ -21,6 +24,14 @@ let fulldate = "Created On "+day + "-" +month+"-"+year;
 
 addToDoButton.addEventListener('click', function(){
    
+let reg = /^[0-9]/
+let testreg = input.value;
+checking = reg.test(testreg);
+// console.log(reg.test(testreg))
+
+
+
+
     var createcheckbox =document.createElement("input");
     createcheckbox.type="checkbox";
     createcheckbox.id = "check";
@@ -33,7 +44,10 @@ addToDoButton.addEventListener('click', function(){
     
             if (input.value == "") {
                 input.classList="formvalidation"
-            } else {
+            }else if(checking == true){
+                input.classList="formvalidation"
+            } 
+            else {
                 let inp={
                     "name":input.value,
                     "checkbox":createcheckbox,
@@ -84,6 +98,21 @@ addToDoButton.addEventListener('click', function(){
 })
 
 
+function searchfun(){
+    let shworking = document.getElementById("searcharr")
+    let reg = /^[0-9]/;
+    let testreg = shworking.value;
+    checking = reg.test(testreg);
+
+    if (checking){
+        shworking.classList="formvalidation"
+    } else {
+        alert("search working properly");
+    }
+
+
+}
+
 
 let icon = document.getElementById("icon");
 let listcss = document.getElementById("listcss");
@@ -112,10 +141,7 @@ function complete1(){
 var check = document.getElementById("all");
 check.addEventListener("click",()=>{
     // let filter = arr.filter((i)=>i.checkbox.checked === false || i.checkbox.checked === true);
-    // console.log(filter);
-    // for (let i = 0; i <= arr.length; i++) {
-    //     toDoContainer.innerHTML = filter[i].name + filter[i].checkbox + filter[i].date + filter[i].delete
-    //     }
+    
     
    
 
