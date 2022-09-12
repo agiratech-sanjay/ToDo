@@ -107,7 +107,9 @@ function searchfun(){
     if (checking){
         shworking.classList="formvalidation"
     } else {
-        alert("search working properly");
+        let searchinputvalue = shworking.value;
+        let searchvalue = arr.filter((item)=> item.name == searchinputvalue)
+        enter(searchvalue);
     }
 
 
@@ -140,38 +142,86 @@ function complete1(){
 
 var check = document.getElementById("all");
 check.addEventListener("click",()=>{
-    // let filter = arr.filter((i)=>i.checkbox.checked === false || i.checkbox.checked === true);
-    
-    
-   
-
-}
-)
+    var  filter1 = arr.filter((i)=>i.checkbox.checked === false || i.checkbox.checked === true);
+    enter(filter1);
+     console.log(filter1);
+})
 
 
 let cheeck = document.getElementById("active");
 cheeck.addEventListener("click",()=>{
-    let filter = arr.filter((i)=>i.checkbox.checked === false);
-    console.log(filter);
-    for (let i = 0; i < arr.length; i++) {
-        toDoContainer.innerHTML = filter[i].name + filter[i].checkbox + filter[i].date + filter[i].delete;
-        }
-    // toDoContainer.innerHTML= filter[0].name;
-
-}
-)
+    var filter2 = arr.filter((i)=>i.checkbox.checked === false);
+    // console.log(filter2);
+    enter(filter2);
+})
 
 
 let che = document.getElementById("complete");
 che.addEventListener("click",()=>{
-    let filter = arr.filter((i)=>i.checkbox.checked === true);
-    console.log(filter);
-    for (let i = 0; i < arr.length; i++) {
-        toDoContainer.innerHTML = filter[i].name + filter[i].checkbox + filter[i].date + filter[i].delete;
+   var filter3 = arr.filter((i)=>i.checkbox.checked === true);
+    // console.log(filter3);
+    enter(filter3);
+})
+
+// function calling for all , active and complete => filter;
+
+function enter(a){
+    while (toDoContainer.hasChildNodes()) {
+        toDoContainer.removeChild(toDoContainer.firstChild);
         }
+        // activelength = filteractive.length;
+    for (let j = 0; j < a.length; j++) {
+
+        var createcheckbox =document.createElement("input");
+        createcheckbox.type="checkbox";
+        createcheckbox.id = "check";
     
+         var  dell = document.createElement("i");
+        dell.id="dele";
+        dell.className="delete";
 
-      }  // toDoContainer.innerHTML = filter.join();
-      )
 
+        let leeet = document.createElement("li");
+            leeet.id="leeet"
 
+            create=document.createElement("span");
+            create.id="create"
+
+            deleteall = document.createElement("span");
+            deleteall.id="deleteall"
+
+            let i = a[j];
+
+            let span = document.createElement("span");
+            span.id="date";
+
+            deleteall.innerHTML = i.name;
+            span.innerHTML=i.date;
+            dell.innerHTML=i.delete;
+
+            
+            if(i.checkbox.checked === false){
+                // createcheckbox.checked="false"
+                // console.log("hello")
+            }else{
+                createcheckbox.checked="true";
+                // console.log("what")
+            }
+
+            create.appendChild(createcheckbox); 
+            create.appendChild(deleteall);
+            create.appendChild(span);
+            create.appendChild(dell);
+            leeet.appendChild(create);
+            toDoContainer.appendChild(leeet);
+            }
+            let remove = document.getElementsByClassName('delete');
+            for (let i = 0; i < remove.length; i++) {
+            remove[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+                arr.splice(i-1,1);
+
+            }
+            }
+            }
