@@ -36,7 +36,7 @@ checking = reg.test(testreg);
     createcheckbox.type="checkbox";
     createcheckbox.id = "check";
 
-  var  dell = document.createElement("i");
+    var dell = document.createElement("i");
     dell.id="dele";
     dell.className="delete";
     
@@ -94,8 +94,9 @@ checking = reg.test(testreg);
                     var div = this.parentElement;
                     div.style.display = "none";
                 }
+            } input.value = "";
             }
-})
+)
 
 
 function searchfun(){
@@ -106,6 +107,7 @@ function searchfun(){
 
     if (checking){
         shworking.classList="formvalidation"
+        toDoContainer.innerText = "NO DATA IS AVALIABLE";
     } else {
         let searchinputvalue = shworking.value;
         let searchvalue = arr.filter((item)=> item.name == searchinputvalue)
@@ -175,6 +177,7 @@ function enter(a){
         var createcheckbox =document.createElement("input");
         createcheckbox.type="checkbox";
         createcheckbox.id = "check";
+        createcheckbox.className="checkevery"
     
          var  dell = document.createElement("i");
         dell.id="dele";
@@ -215,12 +218,30 @@ function enter(a){
             leeet.appendChild(create);
             toDoContainer.appendChild(leeet);
             }
+            let checkchecking = document.getElementsByClassName("checkevery");
+
+            for (let i = 0; i < checkchecking.length; i++) {
+                checkchecking[i].addEventListener("click", () => {
+                    let checkid = a[i].id;
+                    let checkchange = a.findIndex((item) => item.id === checkid);
+                    // let checkindexid=arr[checkchange];
+                    if (a[checkchange].checkbox.checked) {
+                        a[checkchange].checkbox.checked = false;
+                        a.splice(checkchange, 1);
+                        enter(a);
+                    } else {
+                        a[checkchange].checkbox.checked = true;
+                        a.splice(checkchange, 1);
+                        enter(a);
+                    }
+                })
+            }
             let remove = document.getElementsByClassName('delete');
             for (let i = 0; i < remove.length; i++) {
             remove[i].onclick = function () {
                 var div = this.parentElement;
                 div.style.display = "none";
-                arr.splice(i-1,1);
+                arr.splice(i-2,1);
 
             }
             }
