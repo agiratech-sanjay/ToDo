@@ -13,7 +13,7 @@
 }
 
 #bodyall{
-    width:50%;
+    width:60%;
 }
 
 #result{
@@ -46,7 +46,7 @@
     margin-left: 200px;
 }
 .formvalidation{
-    border: 2px solid red;
+    border: 2px solid rgb(255, 123, 0);
 }
 
 
@@ -128,11 +128,12 @@ li{
     
 }
 p {
-    margin-top: 0;
-    margin-bottom: 1rem;
     position: relative;
-    margin-top: 25px;
     cursor: pointer;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    margin-left: 30px;
 }
 #filterCard{
     position: relative;
