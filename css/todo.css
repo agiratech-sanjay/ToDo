@@ -2,13 +2,28 @@
     margin: 50px;
     width: 100%;
 }
+
+.background_img{
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    height: 17rem;
+    width: 90%;
+
+}
+
 #bodyall{
-    width:60%;
+    width:50%;
+}
+
+#result{
+    width: 35%;
+    display:block;
 }
 
 #searchbars{
     position: relative;
-    width: 237px;
+    width: 190px;
     height: 20px;
     top: 5px;
 }
@@ -106,10 +121,7 @@ span#deleteall {
 }
 
 
-#result{
-    width: 70%;
-    display:block;
-}
+
 
 li{
     list-style: none;

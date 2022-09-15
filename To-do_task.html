@@ -15,13 +15,16 @@
    
 </head>
 <body>
-<div class="container-lg responsive" id="bodyall">
-    <div class="header pt-3 bg-success text-white text-center">
+    <div class="container-fluid background_img "style = "background-image: url(images/img4.jpg);">
+    <div class="container responsive" id="bodyall">
+    <!-- <div class="background_img" style = "background-image: url(images/img1.jpeg);" > -->
+    
+    <div class="header pt-3 text-white text-center" >
         <h1>SIMPLE TO-DO LIST</h1>
     </div>
-    
     <div class="section ">
-        <div class="top text text-center text-black  " id="topcontent">
+        <div class="top text text-center text-white  " id="topcontent">
+            <div id="full_content">
             <div class="row ">
                 <div class="col-4">
                     <label class="heoo" for="inputField">TO-DO-LIST</label>
@@ -36,40 +39,44 @@
                 </div>
                 <div class="col-4" id="filterCard">
                     
-                <p onclick="show()" id="icon"> <i class="fa-solid fa-filter"></i>ALL</p>
-                <ul id="listcss" class="icon1">
-                <li id="all" onclick="all1()"> <i class="fa-solid fa-filter"></i> ALL</li>
-                <li id="active" onclick="active1()"> <i class="fa-solid fa-filter"></i> ACTIVE</li>
-                <li id="complete" onclick="complete1()"> <i class="fa-solid fa-filter"></i>          COMPLETE</li>
+                    <p onclick="show()" id="icon"> <i class="fa-solid fa-filter"></i>ALL</p>
+                    <ul id="listcss" class="icon1">
+                        <li id="all" onclick="all1()"> <i class="fa-solid fa-filter"></i> ALL</li>
+                        <li id="active" onclick="active1()"> <i class="fa-solid fa-filter"></i> ACTIVE</li>
+                        <li id="complete" onclick="complete1()"> <i class="fa-solid fa-filter"></i>          COMPLETE</li>
             </ul>
                 </div>
-              <!-- <div class="col-6">
-                <br>
-                <button type="button" class="btn btn-outline-warning" id="all"><i class="fa-solid fa-filter"></i>ALL</button> 
-            
-           
-                <button type="button" class="btn btn-outline-success" id="active"><i class="fa-solid fa-filter"></i>ACTIVE</button> 
-            
-            
-                <button type="button" class="btn btn-outline-info" id="complete"><i class="fa-solid fa-filter"></i>COMPLETE</button> 
-            </div> -->
-              <!-- <div class="col-2">
+            </div>
+                <!-- <div class="col-6">
+                    <br>
+                    <button type="button" class="btn btn-outline-warning" id="all"><i class="fa-solid fa-filter"></i>ALL</button> 
+                    
+                    
+                    <button type="button" class="btn btn-outline-success" id="active"><i class="fa-solid fa-filter"></i>ACTIVE</button> 
+                    
+                    
+                    <button type="button" class="btn btn-outline-info" id="complete"><i class="fa-solid fa-filter"></i>COMPLETE</button> 
+                </div> -->
+                <!-- <div class="col-2">
                 <br>
                 <button type="button" class="btn btn-outline-danger" id="del"><i class="fa-solid fa-trash"></i>Delete</button>                
-
+                
             </div> -->
         </div>
     </div>
- </div>
-
-<div class="container shadow p-3 mb-5 bg-body rounded" id="result">
-    <h4>
-        TO-DO LISTS
-    </h4>
-    <ul id="toDoContainer"> 
-    <br>
-    </ul>  
+    </div>
+</div>   
 </div>
+</div>
+
+    <div class="container shadow p-3 mb-5 bg-body rounded" id="result">
+        <h4>
+            TO-DO LISTS
+        </h4>
+        <ul id="toDoContainer"> 
+            <br>
+        </ul>  
+    </div>
 
 
 

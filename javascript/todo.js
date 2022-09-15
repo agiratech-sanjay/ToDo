@@ -87,14 +87,24 @@ checking = reg.test(testreg);
                 create.appendChild(dell);
                 leeet.appendChild(create);
                 toDoContainer.appendChild(leeet);
+                
+                // localstorage the overall array;
+                localStorage.setItem("lastout", JSON.stringify([...JSON.parse(localStorage.getItem("lastout") || "[]"),
+            { key : inp},
+        ])
+        );
+        
             }
+            
             let remove = document.getElementsByClassName('delete');
             for (let i = 0; i < remove.length; i++) {
                 remove[i].onclick = function () {
                     var div = this.parentElement;
                     div.style.display = "none";
                 }
-            } input.value = "";
+            } 
+                
+                input.value = "";
             }
 )
 
@@ -112,10 +122,7 @@ function searchfun(){
         let searchinputvalue = shworking.value;
         let searchvalue = arr.filter((item)=> item.name == searchinputvalue)
         enter(searchvalue);
-    }
-
-
-}
+    }}
 
 
 let icon = document.getElementById("icon");
@@ -145,8 +152,11 @@ function complete1(){
 var check = document.getElementById("all");
 check.addEventListener("click",()=>{
     var  filter1 = arr.filter((i)=>i.checkbox.checked === false || i.checkbox.checked === true);
+    //  localStorage.setItem("allset",filter1);
     enter(filter1);
-     console.log(filter1);
+
+    // console.log(filter1);
+ console.log(allset1);
 })
 
 
@@ -217,14 +227,15 @@ function enter(a){
             create.appendChild(dell);
             leeet.appendChild(create);
             toDoContainer.appendChild(leeet);
-            }
+        }
+        
             let checkchecking = document.getElementsByClassName("checkevery");
 
             for (let i = 0; i < checkchecking.length; i++) {
                 checkchecking[i].addEventListener("click", () => {
                     let checkid = a[i].id;
                     let checkchange = a.findIndex((item) => item.id === checkid);
-                    // let checkindexid=arr[checkchange];
+
                     if (a[checkchange].checkbox.checked) {
                         a[checkchange].checkbox.checked = false;
                         a.splice(checkchange, 1);
@@ -245,4 +256,6 @@ function enter(a){
 
             }
             }
+           
             }
+
