@@ -11,7 +11,7 @@ let filtercomplete = document.getElementById("filtercomplete")
 
 
 
-let arr = [];
+// let arr = [];
 const months = ["1","2","3","4","5","6","7","8","9","10","11","12"];
 
 
@@ -21,6 +21,9 @@ let month = months[date.getMonth()];
 let year = date.getFullYear();
 let fulldate = "Created On "+day + "-" +month+"-"+year;
 // console.log(fulldate);
+
+let arr = JSON.parse(localStorage.getItem("store")) || [];
+enter(arr);
 
 addToDoButton.addEventListener('click', function(){
    
@@ -52,10 +55,12 @@ checking = reg.test(testreg);
                     "name":input.value,
                     "checkbox":createcheckbox,
                     "date":fulldate,
+                    "status":false,
                     "delete":`<i class="fa-solid fa-trash"></i>`,
-
+                    
                 }
                 arr.push(inp);
+                localStorage.setItem("store", JSON.stringify(arr));
                 // console.log(arr);
                 
                 let leeet = document.createElement("li");
@@ -89,10 +94,6 @@ checking = reg.test(testreg);
                 toDoContainer.appendChild(leeet);
                 
                 // localstorage the overall array;
-                localStorage.setItem("lastout", JSON.stringify([...JSON.parse(localStorage.getItem("lastout") || "[]"),
-            { key : inp},
-        ])
-        );
         
             }
             
@@ -101,6 +102,8 @@ checking = reg.test(testreg);
                 remove[i].onclick = function () {
                     var div = this.parentElement;
                     div.style.display = "none";
+                    arr.splice(i,1);
+                    localStorage.setItem("store",JSON.stringify(arr));
                 }
             } 
                 
@@ -125,13 +128,16 @@ function searchfun(){
     }}
 
 
-let icon = document.getElementById("icon");
+// let icon = document.getElementById("icon");
+let dropdown=document.getElementById("icon1")
 let listcss = document.getElementById("listcss");
 // let i = document.getElementById("i");
 
 function show(){
-    listcss.classList.toggle("working");
+    listcss.classList.toggle("drop");
+    // console.log("hello");
 }
+
 function all1(){
     icon.innerHTML = `<li id="all"><i class="fa-solid fa-filter"></i> ALL</li>`
     listcss.className = "block"
@@ -156,7 +162,7 @@ check.addEventListener("click",()=>{
     enter(filter1);
 
     // console.log(filter1);
- console.log(allset1);
+//  console.log(allset1);
 })
 
 
@@ -164,6 +170,7 @@ let cheeck = document.getElementById("active");
 cheeck.addEventListener("click",()=>{
     var filter2 = arr.filter((i)=>i.checkbox.checked === false);
     // console.log(filter2);
+    // let filteractive = localStorage.setItem("store", JSON.stringify(arr));
     enter(filter2);
 })
 
@@ -172,6 +179,7 @@ let che = document.getElementById("complete");
 che.addEventListener("click",()=>{
    var filter3 = arr.filter((i)=>i.checkbox.checked === true);
     // console.log(filter3);
+    // let filtercomplete = localStorage.setItem("store", JSON.stringify(arr));
     enter(filter3);
 })
 
@@ -191,7 +199,7 @@ function enter(a){
     
          var  dell = document.createElement("i");
         dell.id="dele";
-        dell.className="delete";
+        dell.className="deleteicon";
 
 
         let leeet = document.createElement("li");
@@ -202,8 +210,16 @@ function enter(a){
 
             deleteall = document.createElement("span");
             deleteall.id="deleteall"
-
+            
             let i = a[j];
+
+            if (i.status) {
+                // console.log("check true")
+                i.checkbox.checked = true;
+            } else {
+                i.checkbox.checked = false;
+                // console.log("check false")
+            }
 
             let span = document.createElement("span");
             span.id="date";
@@ -233,28 +249,33 @@ function enter(a){
 
             for (let i = 0; i < checkchecking.length; i++) {
                 checkchecking[i].addEventListener("click", () => {
-                    let checkid = a[i].id;
-                    let checkchange = a.findIndex((item) => item.id === checkid);
-
-                    if (a[checkchange].checkbox.checked) {
-                        a[checkchange].checkbox.checked = false;
-                        a.splice(checkchange, 1);
-                        enter(a);
+                    // let checkid = a[i].id;
+                    // let checkchange = a.findIndex((item) => item.id === checkid);
+                    if (a[i].status) {
+                        a[i].status = false;
+                        localStorage.setItem("store",JSON.stringify(a));
+                        console.log("heloo");
                     } else {
-                        a[checkchange].checkbox.checked = true;
-                        a.splice(checkchange, 1);
-                        enter(a);
+                        a[i].status = true;
+                        localStorage.setItem("store",JSON.stringify(a));
+                        console.log("what");
                     }
                 })
             }
-            let remove = document.getElementsByClassName('delete');
+            
+            let remove = document.getElementsByClassName('deleteicon');
             for (let i = 0; i < remove.length; i++) {
-            remove[i].onclick = function () {
-                var div = this.parentElement;
-                div.style.display = "none";
-                arr.splice(i-2,1);
-
-            }
+                remove[i].onclick = function () {
+                //   console.log(i);
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                    JSON.parse(localStorage.getItem("store"));
+                    a.splice(i,1);
+                    // console.log(a);
+                    localStorage.setItem("store",JSON.stringify(a));
+                    // console.log(dele);
+                    // console.log(a);
+                }
             }
            
             }
